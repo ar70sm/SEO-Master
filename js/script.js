@@ -45,8 +45,8 @@ sa.forEach((ele) => {
 
 function scrollAnimation(ele) {
   if (
-    window.scrollY > ele.offsetTop - window.innerHeight + 100 &&
-    window.scrollY < ele.offsetTop + ele.offsetHeight - 100
+    window.scrollY > ele.offsetTop - window.innerHeight + 150 &&
+    window.scrollY < ele.offsetTop + ele.offsetHeight - 150
   ) {
     ele.style.animationName = ele.dataset.sa
   }

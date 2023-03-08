@@ -17,10 +17,16 @@ html {
 }
 body {
   font-family: "Heebo", sans-serif;
+  background-color: #f3f6ff;
 }
 /* end main styles */
 
 /* start container */
+.main-container{
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
 .container {
   max-width: 1320px;
   padding: 0 12px;
@@ -64,6 +70,9 @@ ul {
 img {
   max-width: 100%;
   display: block;
+}
+section{
+  background-color: white;
 }
 input:focus,
 textarea:focus {
@@ -138,14 +147,15 @@ h2::before{
 }
 /* start scroll animation */
 .box:nth-child(even) {
-  animation-delay: 0.5s;
+  animation-delay: 0.6s;
 }
 
 .sa {
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
+  animation-delay: 0.2s;
 }
 @keyframes comeY {
   from {
@@ -192,8 +202,10 @@ h2::before{
 nav {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 1320px;
   height: 85px;
   padding: 0 65px;
   display: flex;
@@ -339,7 +351,7 @@ nav .search-screen.invisible {
 /* *********** end nav *********** */
 /* *********** start desk *********** */
 #desk {
-  height: 100vh;
+  height: 99vh;
   width: 100wh;
   background-color: var(--main-blue);
   background-image: url(../media/bg-bottom-hero.png), url(../media/bg-dot.png),
@@ -365,7 +377,13 @@ nav .search-screen.invisible {
   max-width: 450px;
 }
 #desk img {
-  filter: drop-shadow(0 0 100px black);
+  animation: img-animation 3s infinite reverse cubic-bezier(.45,.05,.55,.95);
+  transform: translateY(50px)rotateX(-20deg);
+}
+@keyframes img-animation{
+  50%{
+    transform: translateY(-50px) rotateX(20deg);
+  }
 }
 #desk .buttons {
   margin-top: 25px;
@@ -438,7 +456,6 @@ nav .search-screen.invisible {
 /* *********** end about *********** */
 /* *********** start newsletter *********** */
 #newsletter{
-  margin-bottom: 500px;
   background-color: var(--main-blue);
   color: white;
   background-image: url(../media/bg-newsletter.png);
@@ -474,6 +491,11 @@ nav .search-screen.invisible {
 }
 
 /* *********** end newsletter *********** */
+/* *********** start services *********** */
+#services{
+  padding-top: 200px;
+}
+/* *********** end services *********** */
 
 /* start responsivity */
 @media (max-width: 1399px) {

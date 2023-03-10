@@ -27,16 +27,25 @@ dropdown.addEventListener("click", () => {
 addEventListener("click", (e) => {
   if (e.target != dropdown) dropdown.classList.remove("active");
 });
+// *********************** the main list
+
+let listButton = document.querySelector("nav i.list");
+let mainList = document.querySelector("nav > ul");
+
+listButton.addEventListener("click", () => {
+  mainList.classList.toggle("active");
+});
 
 // search-screen
 
-let searchScreen = document.querySelector("nav .search-screen");
+let searchScreen = document.querySelector(".search-screen");
 let searchButton = document.querySelector("nav > i");
-let closeSearch = document.querySelector("nav  .search-screen span");
+let closeSearch = document.querySelector(".search-screen span");
 searchButton.addEventListener("click", () => {
   searchScreen.classList.remove("invisible");
 });
 closeSearch.addEventListener("click", () => {
+  console.log("asd")
   searchScreen.classList.add("invisible");
 });
 

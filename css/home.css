@@ -8,7 +8,7 @@
   justify-content: space-evenly;
 }
 #desk .container {
-  padding-top: 50px;
+  padding-top: 125px;
   height: 100%;
 }
 #desk .text-box {
@@ -97,10 +97,6 @@
   width: 100%;
   position: relative;
 }
-#newsletter .container img {
-  width: 320px;
-  transform: translateY(17%);
-}
 #newsletter .text-box {
   display: flex;
   flex-direction: column;
@@ -120,6 +116,9 @@
 }
 #newsletter img {
   align-self: flex-start;
+  width: 320px;
+  transform: translateY(17%);
+
 }
 
 /* *********** end newsletter *********** */
@@ -138,7 +137,7 @@
   margin-top: 50px;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding: 0 50px;
 }
 #services .box {
@@ -298,7 +297,6 @@
 #comments .center .box {
   background-color: white;
   color: #888;
-  transform: translateY(-50px) scale(1.2);
 }
 #comments i {
   font-size: 40px;
@@ -332,31 +330,33 @@
 /* *********** end comments *********** */
 /* *********** start team *********** */
 #team .box {
-  height: 330px;
   box-sizing: content-box;
   position: relative;
-  padding-top: 50px;
-  padding-right: 50px;
   transition-duration: var(--main-delay);
+  z-index: 1;
+  padding-left: 70px;
+  padding-bottom: 80px;
 }
 #team .box:hover {
   color: white;
 }
 #team .img {
-  position: absolute;
-  top: 0;
-  right: 0;
   overflow: hidden;
   border-radius: 20px;
-  width: calc(100% - 70px);
+  width: 100%;
   filter: grayscale(1);
-  transition-duration: calc(var(--main-delay) * 3);
+  transition-duration: calc(var(--main-delay) * 2);
 }
 #team .box:hover .img {
   filter: grayscale(0);
 }
 #team .text-box {
-  height: 100%;
+  height: calc(100% - 80px);
+  width: calc(100% - 70px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -385,15 +385,33 @@
 }
 /* *********** end team *********** */
 
-
 /* start responsivity */
-@media (max-width: 1399px) {
-}
 @media (max-width: 1199px) {
+  #desk .container,
+  #about .container {
+    flex-direction: column;
+    gap: 70px;
+  }
+  #desk .text-box {
+    text-align: center;
+    max-width: 100%;
+    width: 750px;
+  }
+
+  #about .container > *{
+    max-width: 100%;
+width: 650px;
+  }
 }
 @media (max-width: 991px) {
 }
 @media (max-width: 767px) {
+  #newsletter{
+    padding: 20px 0;
+  }
+  #newsletter img{
+    display: none;
+  }
 }
 @media (max-width: 575px) {
 }

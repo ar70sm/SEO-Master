@@ -93,7 +93,6 @@ projectClasses.forEach(e=>{
 // owl carousel
 
 $('.owl-carousel').owlCarousel({
-    items:3,
     center:true,
     loop:true,
     margin:10,
@@ -101,5 +100,16 @@ $('.owl-carousel').owlCarousel({
     autoplayTimeout:5000,
     autoplayHoverPause:true,
     smartSpeed:1500,
-    dots:false
+    dots:false,
+    responsive:{
+      0:{
+          items:1,
+      },
+      767:{
+          items:2,
+      },
+      991:{
+          items:3,
+      }
+  }
 });

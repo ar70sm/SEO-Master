@@ -7,13 +7,12 @@ navScroll();
 
 // the function
 function navScroll() {
-  if (window.pageYOffset > 80){
+  if (window.pageYOffset > 80) {
     nav.classList.add("scroll");
-    toUp.style.opacity = 1
-  }
-  else{
+    toUp.style.opacity = 1;
+  } else {
     nav.classList.remove("scroll");
-    toUp.style.opacity = 0
+    toUp.style.opacity = 0;
   }
 }
 
@@ -45,7 +44,7 @@ searchButton.addEventListener("click", () => {
   searchScreen.classList.remove("invisible");
 });
 closeSearch.addEventListener("click", () => {
-  console.log("asd")
+  console.log("asd");
   searchScreen.classList.add("invisible");
 });
 
@@ -55,8 +54,12 @@ let sa = [...document.getElementsByClassName("sa")];
 let vvv = sa[0];
 
 sa.forEach((ele) => {
-  addEventListener("scroll", () => { scrollAnimation(ele) });
-  addEventListener("load", () => { scrollAnimation(ele) });
+  addEventListener("scroll", () => {
+    scrollAnimation(ele);
+  });
+  addEventListener("load", () => {
+    scrollAnimation(ele);
+  });
 });
 
 function scrollAnimation(ele) {
@@ -64,52 +67,62 @@ function scrollAnimation(ele) {
     window.scrollY > ele.offsetTop - window.innerHeight + 150 &&
     window.scrollY < ele.offsetTop + ele.offsetHeight - 150
   ) {
-    ele.style.animationName = ele.dataset.sa
+    ele.style.animationName = ele.dataset.sa;
   }
 }
 
-
 // Projects
 
-let projectClasses = [...document.querySelectorAll("#projects li")]
-let projects = [...document.querySelectorAll("#projects .box")]
+let projectClasses = [...document.querySelectorAll("#projects li")];
+let projects = [...document.querySelectorAll("#projects .box")];
 
-projectClasses.forEach(e=>{
-  e.addEventListener("click",()=>{
-    projectClasses.forEach(e=>{
-      e.classList.remove("active")
-    })
-    e.classList.add("active")
-    projects.forEach(ele=>{
-        if ( ele.classList.contains(e.dataset.class)||e.dataset.class=="all"){
-          ele.style.display = "block"
-        }
-        else{
-          ele.style.display = "none"
-        }
-      })
-  })
-})
+projectClasses.forEach((e) => {
+  e.addEventListener("click", () => {
+    projectClasses.forEach((e) => {
+      e.classList.remove("active");
+    });
+    e.classList.add("active");
+    projects.forEach((ele) => {
+      if (ele.classList.contains(e.dataset.class) || e.dataset.class == "all") {
+        ele.style.display = "block";
+      } else {
+        ele.style.display = "none";
+      }
+    });
+  });
+});
+
+let mainInput = [...document.querySelectorAll("#main input , #main textarea")];
+
+mainInput.forEach((e) => {
+  e.addEventListener("focus", () => {
+    e.parentElement.classList.add("focus");
+  });
+  e.addEventListener("focusout", () => {
+    e.parentElement.classList.remove("focus");
+  });
+});
+
 // owl carousel
 
-$('.owl-carousel').owlCarousel({
-    center:true,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:5000,
-    autoplayHoverPause:true,
-    smartSpeed:1500,
-    dots:false,
-    responsive:{
-      0:{
-          items:1,
-      },
-      767:{
-          items:2,
-      },
-      991:{
-          items:3,
-      }
-  }
+$(".owl-carousel").owlCarousel({
+  autoplay: true,
+  smartSpeed: 1000,
+  margin: 10,
+  dots: false,
+  loop: true,
+  center: true,
+  autoplayTimeout: 10000,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    767: {
+      items: 2,
+    },
+    991: {
+      items: 3,
+    },
+  },
 });

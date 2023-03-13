@@ -380,11 +380,11 @@ nav > i {
   font-size: 25px;
   opacity: 0;
   transition-duration: var(--main-delay);
+  z-index: 50;
 }
 /* *********** end nav *********** */
 /* *********** start desk *********** */
 #desk {
-  min-height: 99vh;
   background-color: var(--main-blue);
   background-image: url(../media/bg-bottom-hero.png), url(../media/bg-dot.png),
     url(../media/bg-round.png), url(../media/bg-tree.png);
@@ -393,6 +393,11 @@ nav > i {
   background-size: contain, auto, auto, auto;
   color: white;
 }
+#desk .container {
+  padding-top: 125px;
+  height: 100%;
+}
+
 /* *********** end desk *********** */
 
 
@@ -563,6 +568,14 @@ footer .down{
   nav{
     padding: 10px;
   }
-  
+  .h2{
+    font-size: 25px;
+  }
+  .box{
+    width: 100%;
+  }
+  #team .box{
+    width: calc(100% - 70px);
+  }
 }
 /* end responsivity */

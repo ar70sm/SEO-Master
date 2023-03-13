@@ -1,0 +1,105 @@
+#desk {
+  height: 500px;
+}
+#desk .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+.title {
+  font-size: 50px;
+  font-weight: 700;
+  position: relative;
+}
+#desk p.title::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 70%;
+  background-color: #8888;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+}
+#desk p.lorem span {
+  color: white;
+  margin: 2px;
+}
+#desk p.lorem span:not(:last-of-type) {
+  cursor: pointer;
+}
+
+#main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+#main form {
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 800px;
+  max-width: 100%;
+}
+#main form * {
+  width: 100%;
+  border-radius: 7px;
+}
+#main form > :nth-child(1),
+#main form > :nth-child(2) {
+  width: calc(50% - 10px);
+}
+#main form label > * {
+  font-size: 18px;
+  padding: 25px 10px 10px;
+  border: 1px solid #888;
+  color: #888;
+}
+#main form label {
+  position: relative;
+}
+#main form label:after {
+  content: attr(data-value);
+  position: absolute;
+  color: #aaa;
+  font-size: 22px;
+  top: 14px;
+  left: 10px;
+  transition-duration: 100ms;
+}
+#main form label.focus::after {
+  font-size: 12px;
+  top: 10px;
+  left: 10px;
+}
+#main form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+[type="submit"] {
+  padding: 15px 45px;
+  border: none;
+  background-color: var(--main-blue);
+  color: white;
+  transition-duration: var(--main-delay);
+  font-family: inherit;
+}
+[type="submit"]:hover {
+  background-color: var(--light-blue);
+}
+
+@media (max-width: 767px) {
+  #main form > :nth-child(1),
+  #main form > :nth-child(2) {
+    width: 100%;
+  }
+}
+@media (max-width: 575px){
+  #main form {
+    padding: 0 15px;
+  }
+}

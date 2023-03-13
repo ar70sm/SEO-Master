@@ -1,4 +1,7 @@
 /* *********** start desk *********** */
+#desk{
+  min-height: 99vh;
+}
 #desk .container,
 #about .container,
 #newsletter .container {
@@ -6,10 +9,6 @@
   gap: 15px;
   align-items: center;
   justify-content: space-evenly;
-}
-#desk .container {
-  padding-top: 125px;
-  height: 100%;
 }
 #desk .text-box {
   max-width: 450px;
@@ -137,8 +136,7 @@
   margin-top: 50px;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 0 50px;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 }
 #services .box {
   box-shadow: 0 0 45px #0002;
@@ -280,7 +278,7 @@
   background-image: url(../media/bg-newsletter.png);
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 100px 100px 50px;
+  padding: 50px 0;
 }
 .owl-carousel .owl-stage-outer {
   overflow: visible;
@@ -347,6 +345,9 @@
   filter: grayscale(1);
   transition-duration: calc(var(--main-delay) * 2);
 }
+#team .img img{
+  width: 100%;
+}
 #team .box:hover .img {
   filter: grayscale(0);
 }
@@ -370,8 +371,9 @@
 }
 #team .media {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+flex-direction: column;
+height: 200px;
+justify-content: space-between;
 }
 #team i {
   width: 40px;
@@ -382,6 +384,7 @@
   align-items: center;
   border-radius: 50%;
   color: var(--main-blue);
+  cursor: pointer;
 }
 /* *********** end team *********** */
 

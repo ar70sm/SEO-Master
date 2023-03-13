@@ -1,0 +1,66 @@
+#desk{
+  height: 500px;
+}
+#desk .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+.title{
+  font-size: 50px;
+  font-weight: 700;
+  position: relative;
+}
+#desk p.title::after{
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 70%;
+  background-color: #8888;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+}
+#desk p.lorem span{
+  color: white;
+  margin: 2px;
+}
+#desk p.lorem span:not(:last-of-type){
+  cursor: pointer;
+}
+
+#main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+#main i{
+  color: var(--main-blue);
+  margin-bottom: 20px;
+}
+#main .lorem{
+  width: 450px;
+  max-width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+button{
+  padding: 15px 45px;
+border-radius: 30px;
+border: none;
+background-color: var(--main-blue);
+color: white;
+transition-duration: var(--main-delay);
+cursor: pointer;
+font-size: 20px;
+text-transform: capitalize;
+}
+button:hover{
+  
+background-color: var(--light-blue);
+}
